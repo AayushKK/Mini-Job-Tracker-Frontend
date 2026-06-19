@@ -18,10 +18,16 @@ export default function FilterBar({
   hasFilters: boolean;
 }) {
   return (
-    <div className="flex flex-row sm:flex-row gap-4 mb-6">
-      <SearchInput value={search} onChange={onSearchChange} />
-      <StatusFilter value={status} onChange={onStatusChange} />
-      {hasFilters && <Button variant="secondary" onClick={onClearFilters}>Clear Filters</Button>}
+    <div className="flex flex-col sm:flex-row gap-4 mb-6">
+      <div className="flex items-center gap-2 w-full ">
+        <SearchInput value={search} onChange={onSearchChange} />
+      </div>
+      <div className="flex items-center gap-2 w-full sm:w-auto">
+        <StatusFilter value={status} onChange={onStatusChange} />
+      </div>
+      <div className="flex items-center gap-2 w-full sm:w-auto">
+        {hasFilters && <Button variant="secondary" onClick={onClearFilters}>Clear Filters</Button>}
+      </div>
     </div>
   );
 }

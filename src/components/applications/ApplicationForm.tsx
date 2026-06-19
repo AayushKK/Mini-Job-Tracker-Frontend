@@ -79,7 +79,11 @@ export default function ApplicationForm({
           <Select {...register('status')} label="Status *" options={statusOptions} error={errors.status?.message} />
         </div>
         <div className="md:col-span-2">
-          <Input {...register('applied_date')} type="date" label="Applied Date *" error={errors.applied_date?.message} />
+          {isEditing ? (
+            <Input {...register('applied_date')} label="Applied Date *" placeholder={initialData?.applied_date} error={errors.applied_date?.message} />
+          ) : (
+            <Input {...register('applied_date')} type="date" label="Applied Date *" error={errors.applied_date?.message} />
+          )}
         </div>
         <div className="md:col-span-2">
           <textarea {...register('notes')} rows={4} className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Notes" />

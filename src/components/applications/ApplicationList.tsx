@@ -5,7 +5,7 @@ import ApplicationTable from './ApplicationTable';
 import ApplicationStats from './ApplicationStats';
 import FilterBar from '@/components/filters/FilterBar';
 import Spinner from '@/components/ui/Spinner';
-
+import Button from '@/components/ui/Button';
 export default function ApplicationList() {
   const { applications, loading, error, status, search, setStatus, setSearch, deleteApplication } = useApplications();
   console.log('📊 Applications in list:', applications);
@@ -13,7 +13,7 @@ export default function ApplicationList() {
     return (
       <div className="text-center py-12">
         <p className="text-red-500 text-lg">{error}</p>
-        <button onClick={() => window.location.reload()} className="mt-4 text-blue-600 hover:underline">Retry</button>
+        <Button onClick={() => window.location.reload()} className="mt-4 text-blue-600 hover:underline">Retry</Button>
       </div>
     );
   }
