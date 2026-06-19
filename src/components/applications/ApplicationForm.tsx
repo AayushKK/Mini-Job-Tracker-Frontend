@@ -11,7 +11,7 @@ import Input from '@/components/ui/Input';
 import Select from '@/components/ui/Select';
 
 const schema = z.object({
-  company_name: z.string().min(1, 'Required'),
+  company_name: z.string().min(2, 'Required'),
   job_title: z.string().min(1, 'Required'),
   job_type: z.enum(['Internship', 'Full-time', 'Part-time']),
   status: z.enum(['Applied', 'Interviewing', 'Offer', 'Rejected']),
